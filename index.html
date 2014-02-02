@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+
+		<head>
+				<meta charset="utf-8"/>
+
+				<title>What Every Gangster Should Know About Functional Programming</title>
+
+				<meta name="description" content="What Every Hipster Should Know About Functional Programming"/>
+				<meta name="author" content="NEWTON" />
+
+				<meta name="apple-mobile-web-app-capable" content="yes" />
+				<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+				<link rel="stylesheet" href="css/reveal.min.css"/>
+				<link rel="stylesheet" href="css/theme/hipster.css" id="theme"/>
+
+				<!-- For syntax highlighting -->
+				<link rel="stylesheet" href="lib/css/tomorrow-night-eighties.css"/>
+
+				<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+				<script>
+						document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+				</script>
+
+		</head>
+
+		<body>
+
+				<div class="reveal">
+
+						<!-- Any section element inside of this container is displayed as a slide -->
+						<div class="slides">
+
+
+								<section>
+										<img src="m/twilight-sparkle.jpg"/>
+										<div class="pic-label quote">
+												I use Haskell.
+												<br/>You probably wouldn't understand it.
+										</div>
+								</section>
+         
+								<section>
+									<h4>GOGO GANG</h4>
+										<img src="m/gogo.jpg"/>
+										<div class="pic-label quote">
+            
+												<br/>Aya hu to kuch na kuch lootke jaonga
+										</div>
+								</section>
+
+								<section class="title-slide">
+										<p>Every Gangster should know about ?</p>
+										<img src="m/the-four-hipsters.jpg"/>
+										<h3>Functional Programming</h3>
+										
+										<h6 class="small centre">via haskell</h6>
+								</section>
+
+	<section>
+								<img src="m/boss.jpg"/>
+															</section>
+         
+
+
+
+
+      	<section>
+								<img src="m/para.jpg"/>
+															</section>
+
+        <section>
+										<img src="m/systems-programmers.jpg"/>
+										<div class="pic-label quote">
+												<div class="big">Stand back!</div>
+												We know regular expressions.
+										</div>
+								</section>
+
+								
+
+								<section>
+										<img src="m/standup.jpg"/>
+            <div class="pic-label the-wadler">
+      
+												<div class="problem">The name's Bond, James Bond, 
+<br /> and I am an alcoholic</div>
+										</div>					
+								</section>
+
+
+          
+        <section>
+										<img src="m/prog.jpg"/>
+            <div class="pic-label the-wadler">
+      
+												<div class="problem">Mama I'm Coming Home
+<br /> </div>
+										</div>					
+								</section>
+
+
+
+								<section>
+										<img src="m/hipster-ariel-irl.jpg"/>
+										<div class="pic-label the-wadler">
+      
+												<div class="problem">"The Last Son of Krypton"
+<br /> </div>
+										</div>
+								</section>
+
+								<section>
+										<img src="m/logicians.jpg"/>
+										<div class="pic-label quote">
+												I'm Terrified... mortified... petrified... 
+												<br /> stupefied... by you.
+										</div>
+								</section>
+        
+        
+	<section>
+										<img src="m/talk.jpg"/>
+          
+								</section>
+<section>
+     
+										<pre class="repl">
+							▹ In Java:<code>
+					total = 0;
+					for (i = 1; i <= 10; ++i)
+					total = total + i;</code>
+					  	
+						▹ In Haskell:<code >
+         sum [1..10] </code></pre>
+		<pre class="repl">
+		
+						▹ In Haskell fibonacci:
+				<code>	fib = 1:1:zipWith (+) fib (tail fib)
+		
+					take 10 fib </code>  
+</pre>
+
+</section>
+
+<section>
+										<img class="plain" src="m/rarity.jpg"/>
+										<div class="pic-label bigger">
+												Haskell 101
+										</div>
+								</section>
+
+								<section>
+								<p>What is functional prog ?</p>
+										<pre class="repl">
+            	
+						▹ "Programming with Mathematical Functions."
+								Always same output for same input.
+      
+						▹ Computation = Application of functions to arguments
+	</pre>
+										<pre class="context">
+          
+										Pure World :            Imperative world :
+                                        
+						f :: Int -> Int         |     int f (int) 
+						                        |    
+						(f(3) , f(3))           |     (f(3) , f(3))   
+						                        |  
+						let x = f(3) in (x,x)   |     Can't do it. #time on clk
+										</pre>
+         
+            
+            
+         
+										<aside class="notes">
+												Show square(8).
+												Show andThree(square).
+												Show andThree(square)(8).
+										</aside>
+								</section>
+        
+        
+        
+								<section>
+								<h4>Haskell</h4>
+<pre class="repl">
+            	
+				" Haskell is a pure, statically typed, lazy functional
+						programming language."
+    
+    
+								▹ Purity. It doesn’t allow any side-effects.
+								
+								▹ Laziness (non-strict).
+
+								▹ Strong static typing. 
+								
+								▹ Elegance. Stuff just work like you’d expect it to
+
+										</pre>
+         
+         
+         
+										<aside class="notes">
+												Show square(8).
+												Show andThree(square).
+												Show andThree(square)(8).
+										</aside>
+								</section>
+
+
+										<aside class="notes">
+												Discover that hello is a variable.
+												Reassign: ohai = hello;
+												Create the invoke function.
+										</aside>
+								</section>
+								
+								         
+        
+								<section>
+										<img class="plain" src="m/scootaloo.png"/>
+										<div class="pic-label big">
+												FIRST CLASS FUNCTION
+										</div>
+								</section>
+         
+          <section>
+								<p>Wrong Marketing</p>
+										<pre class="context">
+    
+    Special characteristics && advantages func prog :
+     
+     ♥ Functional programs contain no assignment statements.
+     
+     ♥ Functional programs contain no side-effects at all.
+     
+     -- Makes the order of execution irrelevant 
+     -- Expression can be evaluated at any time.
+     
+     ♥ Relieves the programmer of the burden of 
+       prescribing the flow of control.
+										</pre>
+								
+										</section>
+					
+					<section>					
+ <p>Buzzword No.1</p>											
+											<pre class="context">
+								<ins>	REFERENTIAL TRANSPARENCY</ins> :
+
+									"An expression is said to be referentially transparent 
+									 if it can be replaced with its value without
+									 changing the behavior of a program ."			
+									 
+									 Equals can be replaced by Equals.
+									 
+         ♥ 	Functions are values	 ♥
+									</pre>
+					
+										
+										</section>
+
+								<section>
+								<p>John Hughes '1984</p>
+										<pre class="context">
+    "As software becomes more and more complex, 
+      it is more and more important to structure it well." 
+           
+    "Conventional languages place conceptual limits 
+     on the way problems can be modularised.
+     Functional languages push those limits back."
+										</pre>
+										<pre class="repl">
+     Modular design - great productivity improvements :
+     
+     1. Small modules 
+     
+     2. Module Reuse 
+
+     3. Modules Tested independently   
+										</pre>
+										<aside class="notes">
+												Higher order function! Run it with CAPS.
+												Reduce ponies using mapReducer.
+												Implement map using reduce and mapReducer.
+										</aside>
+								</section>
+            
+        
+
+								<section>
+										<pre class="repl">
+     "The ways in which one can divide up the original prob depend
+      directly on the ways in which one can glue sols together."
+      
+     "To increase ones ability to modularise a prob conceptually,
+      one must provide new kinds of glue in the prog lang."
+      
+     ▹ Two new kind of glue :
+      
+       ♥ Higher order functions.
+      
+       ♥ Lazy Evaluation.
+
+                 
+										</pre>
+								</section>
+
+<section>
+         <h4><b>Lambda Calculus</b></h4>
+           <pre class="repl">
+   <code >“Lambda calculus is a formal system in math logic & c.s for 
+    expressing computation by way of var binding & substitution."</code>
+    Composed only of functions.
+    
+   ♥ Smallest universal programming lang of the world
+										</pre>										
+										<pre class="repl">
+  <code>   
+            E  ::=   x       -- MENTION
+                
+                |  λx.E      -- ABS     
+
+                |  E E       -- APP</code>
+										</pre>
+											
+								</section>
+
+
+         
+        
+<section>
+										<img class="plain" src="m/vindaloo.jpg"/>
+										<div class="pic-label bigger">
+												CURRYING
+										</div>
+								</section>
+
+<section>
+<p>Function Basics</p>
+										<pre class="repl">
+         <ins>Function types:</ins>:
+          
+          Mathematics      Haskell 
+          f : A × B → C    f :: A -> B -> C   
+         
+          f a + b  means (f a) + b  
+                   not f (a + b)</pre>
+											<pre class="repl"><code>            > head [1, 2, 3, 4, 5]     -- dual  tail
+              1
+              
+            > take 3 [1, 2, 3, 4, 5]   -- dual drop
+              [1,2,3]
+              
+            > length [1, 2, 3, 4, 5]
+              5
+           
+            > [1, 2, 3] ++ [4, 5]
+              [1, 2, 3, 4, 5]</code>
+           
+</pre>
+								</section>
+								
+     	<section>
+     	<p>Types and Classes</p>
+										<pre class="context">
+      "A type is a collection of related values."
+						
+      ♥ 	Bool , Char , String , Int , Integer , Float 
+						List , Tuple , Function.
+      
+      → 	Type inference.</pre>
+    <!--   Every expr must have a type, which is calc prior
+       to eval the expr by a process called -->						
+										<pre class="context">       	<ins><b>Curried Functions</b></ins><code>
+       Every function in Haskell officially takes one parameter.       
+       add :: (Int, Int) → Int
+       add (x , y) = x + y
+       
+       add' :: Int → (Int → Int)
+       add' x y = x + y
+       	
+       add' = λx → (λy → x + y)</code>
+				</section>				
+
+  <section>
+   <pre class= "context">
+     <ins><b>Polymorphic type</b></ins>:
+      <code>    length :: [a] → Int	 
+
+      -- a is a type var </code>
+      
+<b>     <ins>Overloaded type</ins>:</b>
+        <code>    (+) :: Num a ⇒ a → a → a 
+
+      -- Num a is Class constraint
+       
+      "Class" is a collection of types that support
+       certain overloaded operations called methods.</code> 
+     ♥  Eq, Ord, Show, Read, Num, Integral, fractional
+     </pre>  
+  </section>
+     
+      <section> 
+      <pre><code>       <ins><b>Guarded Equation</b></ins>
+
+       abs n  | n ≥ 0  = n
+              | otherwise = −n      
+       
+       Miranda :
+       abs n =  n , n >= 0
+             = -n , otherwise             </code></pre>
+      <pre class = "context"><code>
+      <ins><b>Pattern Matching :</b></ins>
+      
+   → [1,2,3,4] :: [Int]  is just Syntactic sugar for 
+      1 : (2 : (3 : 4 : [] ) ) )    -- cons operator
+      
+      sum :: Num a => [a] -> a
+      sum []     = 0
+      sum (x:xs) = x + sum xs</code>
+      </pre>      
+      </section>
+      
+        <section> 
+      <pre><code> 
+      <ins><b>List Comprehension</b></ins>
+      
+      [ x | x <- [1 .. 10] , even x ]      
+          -- Generator      --Guard
+     
+      factors :: Int -> [Int]
+      factors n = [m | m <- [1 .. n], n `mod` m == 0]
+     
+      zip :: [a] -> [b] -> [ (a , b) ]
+      </code></pre>
+      <pre class = "context"><code>
+      <ins><b>Recursion</b></ins>
+      
+      fibonacci :: Int → Int
+      fibonacci 0 = 0
+      fibonacci 1 = 1
+      fibonacci (n + 2) = fibonacci n + fibonacci (n + 1)
+     </code>
+      </pre>      
+      </section>      
+      
+        <section>
+          <img class="plain" src="m/fluttershy-2.jpg"/>
+          <div class="pic-label big">
+            HIGH ORDER FUNCTION
+          </div>
+        </section>      
+
+             
+      <section>
+      					<pre class="context"><code><b>      <ins>Higher Order Functions</ins></b></code>
+        " The functions take functions as parameters and 
+           return functions as return values."<code>
+           applyTwice :: (a -> a) -> a -> a  
+           applyTwice f x = f (f x)
+           > applyTwice (+3) 10   
+             16           </code>     
+        <ins><b>The mother of all higher-order functions</b></ins> :<code>           
+           map :: (a -> b) -> [a] -> [b]			          
+           map f [ ] = []
+           map f (x : xs) = f x : map f xs	
+            
+           map f xs = [ f x | x <- xs ]   --using list compreh
+           > map (+3) [1,5,3,1,6]  
+             [4,8,6,4,9] </code></pre>				
+           
+</section>										
+      
+      <section>
+     <pre class="repl"><code>  <b>Filter :</b>
+     
+     filter p xs = [ x | x <- xs, p x ]   -- using list compreh
+     
+     filter :: (a -> Bool) -> [a] -> [a]   
+     filter p [] = []
+     filter p (x:xs) 
+                  | p x = x : filter p xs
+                  | otherwise = filter p xs
+  
+     > filter even [1, 2, 3, 5]
+       [2]                                   </code></pre>      
+      </section>
+
+  <section>
+      					<pre class="repl">
+      					Simple functions with a common interface <code>
+       sum :: (Num a) => [a] -> a
+       sum [] = 0
+       sum (x:xs) = x + sum xs
+
+       prod :: (Num a) => [a] -> a
+       prod [] = 1
+       prod (x:xs) = x * prod xs
+
+       length :: [a] -> Int
+       length [] = 0   
+       length (x:xs) = 1 + length xs </code> </pre>
+<pre class="repl">       f []     = v
+       f (x:xs) = x ⊕ f xs     
+       
+       foldr encapsulate this pattern of recursion.
+                </pre>				        
+</section>				
+ 
+      <section>
+										<pre class="context"><code>     								foldr :: (a -> b -> b) -> b -> [a] -> b
+         foldr f v [] = v
+         foldr f v (x:xs) = f x ( foldr f v xs )
+         
+         foldr f v replaces 
+            (:) by f and
+            [] by v				
+           
+         foldr (+) 0 [3,2,5]          
+         -> 3 : (2 : (5 : []))
+         -> 3 + (2 + (5 + 0))		</code></pre>
+										<pre class="repl"><code>        										sum’ = foldr (+) 0										
+										
+										prod’ = foldr (*) 1
+
+										length’ = foldr (\_ accum -> 1 + accum) 0
+										</code></pre>
+      </section>
+      
+								<section>
+										<img class="plain" src="m/pinkie-pie.jpg"/>
+										<div class="pic-label bigger">
+												COMPOSITION
+										</div>
+								</section>
+
+								<section>
+										<pre class="context"><code> The composition Operator :
+										
+        (.) :: (b → c) → (a → b) → (a → c)
+        f . g = \x → f (g x )		
+        
+        > map (negate . abs) [5,-3,-6,7,-3,2,-19,24]  
+         [-5,-3,-6,-7,-3,-2,-19,-24]  
+        
+        map :: (a -> b) -> [a] -> [b]
+        map fn = foldr ((:) . fn) []        
+        </code>	</pre>
+										
+										<aside class="notes">
+												Run CAPS(hi(s)).
+												Write compose func then compose hi and CAPS.
+												Then compose CAPS and hi.
+										</aside>
+								</section>
+
+								<section>
+										<img class="plain" src="m/derpy.jpg"/>
+										<div class="pic-label big">
+							.....	LAZY....  EVALUATION
+										</div>
+								</section>
+
+								<section>
+										<pre class="context"><code>       " Haskell is a lazy language, meaning that the
+         language will evaluate expr only one needed."
+
+					(g . f) when applied to input  
+      ⊛  g (f input)
+       
+      The two prog f & g are run together
+      in strict synchronisation.
+      
+      If g terminates without reading all of 
+      f’s output then f is aborted.
+      F can even be a non-terminating program .</code></pre>
+<pre>     > take 5 [1..]
+     > sum . map (\_ -> 1)   -- No intermediate data structure.
+     
+      ♥ This allows termination conditions to be separated from 
+      loop bodies - a powerful modularisation
+      </code></pre>
+										
+								</section>
+								
+								
+        <section>
+ <pre class ="repl"><code>   f x = 4711 
+       
+    ⊥ is a non terminating function
+    
+       f  (True && ⊥)   ⊵    4711
+    ≔ 
+       f ⊥
+    ≔
+       4711      -- order of evaluation do't matters. </code>  </pre>								
+  <pre class = "repl">
+    Beauty of lazy eval :
+    
+  ♥   It supports equational reasoning .
+  ♥   U abstract from evaluation order. 
+     
+    That's why fp very popular for concurrency & parallelism.
+    
+    Compiler / VM can deside in which order it eval things.
+    Imperative world its dictated by lang spec.  
+  </pre>
+								</section>												
+								
+<section>
+
+ <pre class="repl"><ins>Newton-Raphson Square Roots:</ins>
+ 
+          This algorithm computes the square root of a number N by 
+          starting from an initial approximation a0 and computing 
+          better and better ones using the rule :<code>
+          a(n+1) = (a(n) + N/a(n)) / 2</code>
+          If the approximations converge to some limit a, then<code>
+          a = (a + N/a) / 2
+    so    2a = a + N/a
+          a = N/a
+          a*a = N
+          a = squareroot(N)</code>
+        Square root programs take a tolerance (eps) & stop when 
+        two successive approximations differ by less than eps.          
+          </pre>
+    
+ 
+        <!--      sum . map (\_ -> 1)
+         ≡  foldr (\_ x -> 1 + x)   --allowed coz haskell is lazy
+         No intermediate data structure.
+         
+         iterate :: (a -> a) -> a -> [a]
+         iterate fn a = (a : iterate fn (fn a))
+         
+         -- [a, fn a, fn (fn a), fn (fn (fn a))), ...]         
+         </code></pre><pre class="repl"><code>
+         An infinite recursion, it will stop when algo do
+         not require more values from the infinite lists
+         
+          bitValues :: [Int]
+          bitValues = iterate (*2) 1
+       
+        > take 8 bitValues 
+         [1,2,4,8,16,32,64,128]  </code></pre>
+										-->
+										
+</section>
+ 
+      <section>
+     <pre class= "repl">
+     The algorithm is usually programmed as:<code> 
+C    N IS CALLED ZN HERE SO THAT IT HAS THE RIGHT TYPE
+     X = A0
+     Y = A0 + 2.*EPS 
+C    THE VALUE OF Y DOES NOT MATTER SO LONG AS ABS(X-Y).GT.EPS
+100  IF (ABS(X-Y).LE.EPS) GOTO 200
+     Y = X
+     X = (X + ZN/X) / 2.
+     GOTO 100
+200  CONTINUE
+C    THE SQUARE ROOT OF ZN IS NOW IN X</code>
+This program is indivisible in conventional languages.
+      </pre>      
+      
+      </section> 
+ <section>
+     <pre class="repl">
+     Each approx is derived from the previous one by the func<code>     
+     next N x = (x + N/x) / 2     
+     
+     Calling this function f, the sequence of approx is
+     [a0, f a0, f(f a0), f(f(f a0)), ..]
+
+     repeat f a = cons a (repeat f (f a))  -- for that 
+      
+     repeat (next N) a0   -- to compute approx </code> </pre><pre>   Takes a tolerance & a list of approx & looks down the list for
+   two succ approx that differ by no more than the given tolerance.<code>
+       within eps (cons a (cons b rest)) = 
+       = b ,                       if abs(a-b) <= eps
+       = within eps (cons b rest),  otherwise 
+
+       sqrt a0 eps N = within eps (repeat (next N) a0)        
+       </code></pre> 
+ </section>
+ 
+       <section>
+       <pre class = "repl"><code>    <b> Type declarations :</b>
+        Introduce a new name for an existing type
+        
+        type String = [Char]</code></pre><pre class="repl"><code>
+     <b> Data declarations :</b>
+        Completely new type can be declared by 
+        specifying its values     
+   
+         data Tree = Leaf Int | Node Tree Int Tree
+         
+          t :: Tree
+          t = Node (Node (Leaf 1) 3 (Leaf 4)) 5 
+                   (Node (Leaf 6) 7 (Leaf 9))         
+         
+     -- 5 3 7 : interbal nodes  -- 1 4 6 9 : leaves </code>  </pre> 
+         
+         <!-- 
+        data Shape = Circle Float | Rect Float Float
+        square :: Float → Shape
+        square n = Rect n n
+        area:: Shape → Float
+        area (Circle r ) = pi ∗ r ↑ 2
+        area (Rect x y) = x ∗ y
+-->     
+       </section>
+       <section>
+             <pre class="repl">
+        To handle nullable values we use an Algebraic Data Type 
+        called Maybe<code>
+        data Maybe a = Just a
+                       | Nothing
+                       deriving (Show)
+                       
+                       
+        safediv :: Int → Int → Maybe Int
+        safediv _ 0 = Nothing           --wildcard pattern
+        safediv m n = Just (m ‘div ‘ n)                       
+                       </code>             					 </pre>
+       </section>
+							
+								<section>
+										<img class="plain" src="m/rainbow-dash.jpg"/>
+										<div class="pic-label big "> 
+												MONADS
+										</div>
+								</section>
+
+        <section>
+           <pre class="repl">
+        <code>   A parser is a program that takes a string of characters
+   and produces some form  of tree that makes the syntactic 
+   structure of the string explicit.
+        
+           2 ∗ 3 + 4</code>                                     <img src="m/tree.png" width="200" height="150" alt="">          
+     type Parser = String → Tree
+           
+     type Parser = String → (Tree, String)
+           
+     type Parser = String → [(Tree, String)]
+           
+     type Parser a = String → [(a, String)]
+                   </code>   </pre>
+        </section>								
+								
+<section>
+              
+              <pre class = "repl">
+              <b>  Basic parsers :    </b>
+
+       Fails if the input string is empty & succeeds
+       with the first character as the result value otherwise:<code>       
+             item :: Parser Char
+             item = λinp → case inp of
+                       [] → []
+                       (x : xs) → [(x , xs)]              </code></pre>
+              <pre class = "repl">
+          The parser return v always succeeds :<code>
+          return :: a → Parser a
+          return v = λinp → [(v , inp)]</code>
+          The dual parser failure always fails :<code>
+          failure :: Parser a
+          failure = λinp → [ ]</code>
+          </pre>
+</section>
+<section>
+               <pre class ="repl">
+          Defining our own application function:<code>
+             parse :: Parser a → String → [(a, String)]
+             parse p inp = p inp     --Identity function
+                            
+             > parse (return 1) "abc"
+               [(1, "abc")]
+               
+             > parse failure "abc"
+               []
+
+             > parse item "abc"
+               [(’a’, "bc")]           </code>
+               </pre>
+</section>			
+         <section>
+        <pre class ="repl">
+      A parser type is a monad a math structure that has proved
+      useful for  modelling many different kind of computation .              
+<code>      MONAD :  
+      Is a computation that returns a value of type a.     </code>
+        item :: Parser a
+             :: string -> [(a , String)]
+
+        ♥ monads    M a   
+        M : Complicated computation 
+        that delivers the value of type a
+
+       Type of monad abstract away from that computation. 
+              </pre>         
+         </section>
+
+
+<section>
+
+    <pre class = "repl">
+       Sequencing :    
+     Way of combining two parsers :<code>
+     (>>=) :: Parser a → (a → Parser b) → Parser b
+     p >>= f = λinp → case parse p inp of
+               [] → []
+               [(v , out)] → parse (f v ) out    </code></pre>
+     <pre class= "repl">
+     do notation :<code>
+     p :: Parser (Char , Char )
+     p = do x ← item
+         item
+         y ← item
+         return (x , y)</code>
+      </pre>
+ 
+
+</section>					
+
+    <section>
+ <pre class = "repl">   
+ IO MONAD
+
+    But to be useful as well as beautiful, a language must
+    manage the “Awkward Squad”:
+
+     Input/Output
+     Imperative update
+     Error recovery (eg, timeout, divide by zero, etc.)
+     Foreign-language interfaces
+     Concurrency control
+     
+    Conflict : Laziness and side effects are incompatible
+ </pre>    
+  
+    </section>
+
+       <section>
+										<pre class="repl"><code>
+          Monadic I/O: The Key Idea :
+          
+          A value of type (IO t) is an “action”
+             
+          When performed, an action may do some
+          input/output and deliver a result of type t		
+          
+          type IO t = World -> (t, World)					</code>	</pre>									
+									<pre class ="repl">
+          • General concept from category theory
+           Adopted in Haskell for I/O, side effects, ...
+          
+          • A monad consists of:
+           – A type constructor M
+           – A function bind :: M a -> ( a -> M b) -> M b
+           – A function return :: a -> M a									
+									</pre>
+								</section>
+								<section>
+         <pre class = "repl"><code>
+          main = do  
+               foo <- putStrLn "Hello, what's your name?"  
+               name <- getLine  
+               putStrLn ("Hey " ++ name ++ ", you rock!")           </code>
+         </pre>								
+								</section>
+   <section>
+     <h4>Category theory</h4>
+    <pre class = "repl">
+     <img src="m/cat.gif" alt="">    
+    </pre>   
+   </section>
+
+								<section>
+										<img class="plain" src="m/and-now-haskell.png"/>
+								</section>
+        
+        <section>
+										<pre class="repl">
+             <p>Quick sort in C vs in Haskell</p>						
+										</pre>
+								</section>
+            
+        
+        
+				<section>
+           
+										<pre class="repl">
+													void qsort(int a[], int lo, int h ){
+																	int h, l, p, t;
+																	if (lo < hi) {
+																					l = lo;
+																					h = hi;
+																					p = a[hi];
+																					do {
+																							while ((l < h) && (a[l] <= p))
+																	           l = l+1;
+																	       while ((h > l) && (a[h] >= p))
+																	           h = h-1;
+																       	if (l < h) {
+																              	t = a[l];
+																	             a[l] = a[h];
+																	             a[h] = t; }
+								} while (l < h);
+        a[hi] = a[l];
+        a[l] = p;
+        qsort( a, lo, l-1 );
+        qsort( a, l+1, hi );     
+     } 
+  }							   
+										</pre>
+</section>
+
+
+<section>
+<p>Qicksort in haskell</p>
+										<pre class="repl">
+         qsort [] = []
+         qsort (x:xs) = qsort ys ++ [x] ++ qsort zs
+                        where 
+                           ys = [y | y <- xs, y <= x]
+                           zs = [z | z <- xs, z > x]
+										</pre>
+</section>
+<!--
+								<section>
+										<h3>Zygohistomorphic prepromorphisms</h3>
+										<p class="small">
+												Used when you really need both semi-mutual recursion and
+												history and to repeatedly apply a natural transformation
+												as you get deeper into the functor. Zygo implements
+												semi-mutual recursion like a zygomorphism. Para gives you
+												access to your result à la paramorphism.
+										</p>
+								</section>
+
+								<section>
+										<img src="m/logicians.jpg"/>
+										<div class="pic-label quote">
+												I am Oleg Kiselyov.
+												<br/>I bring greetings from my planet.
+										</div>
+								</section>
+
+								<section class="final-slide">
+										<h3>Thank you</h3>
+										<img src="m/dash.gif"/>
+										<p class="centre"><a href="http://bodil.org">Bodil Stokke</a></p>
+										<p class="centre small"><a href="http://twitter.com/bodil">@bodil</a></p>
+										<p class="centre"><a href="https://bodil.org/hipster">bodil.org/hipster</a></p>
+								</section>
+-->
+
+
+
+
+								<section>
+										<img class="plain" src="m/wat.jpg"/>
+								</section>
+
+						</div>
+
+				</div>
+
+				<script src="lib/js/head.min.js"></script>
+				<script src="js/reveal.js"></script>
+
+				<script type="text/javascript">
+
+						// Full list of configuration options available here:
+						// https://github.com/hakimel/reveal.js#configuration
+						Reveal.initialize({
+								controls: false,
+								progress: false,
+								history: true,
+								center: true,
+								mouseWheel: true,
+								rollingLinks: false,
+
+								theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+								transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/none
+
+								// Optional libraries used to extend on reveal.js
+								dependencies: [
+										{ src: 'lib/js/underscore.js', async: true, condition: function() { return true; } },
+										{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+										{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+										{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+										{ src: 'plugin/prettify/prettify.js', async: true, callback: function() {
+												var i, els = document.querySelectorAll("code"), l = els.length, el;
+												for (i = 0; i < l; i++) {
+														el = els[i];
+														if (el.className !== "no-highlight")
+																el.innerHTML = prettyPrintOne(el.innerHTML, el.className);
+												}
+										} },
+										{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+										{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+										{ src: 'plugin/catnip/catnip.js', async: true, condition: function() { return window.parent !== window; } },
+										{ src: 'plugin/repl/ace/ace.js', async: true },
+										{ src: 'plugin/repl/typescript.js', async: true },
+										{ src: 'plugin/repl/repl.js', async: true }
+										// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+								]
+						});
+
+				</script>
+
+		</body>
+</html>
