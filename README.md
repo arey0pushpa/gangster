@@ -16,8 +16,9 @@ blends to build an introductory presentation .
 Bodil main presentation "what every hipster should know about func
 prog "is configured for this presentaion with neat handwriting .
 
-srry for the to many pink headings & love symbols  . Inspired
-by book on algo and python.
-   Python and Algorithms ♥
+Sorry for the too many pink headings & love symbols  .
+ Inspired by book on algo and python.
+ ♥ Python and Algorithms ♥
  by mari wahl.
- so txs to mari and bluefish editor .
+ 
+so txs to Mari for Love symbol and bluefish editor to help editing these slides.
